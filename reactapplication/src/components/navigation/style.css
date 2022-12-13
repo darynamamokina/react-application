@@ -1,40 +1,25 @@
 nav {
-    width: 30%;
-    height: 100vh;
-    padding: 30px;
-    color: #aaa;
+    width: 100%;
+    height: 150px;
+    background-color: #474747;
+    color: #ababab;
     box-sizing: border-box;
-}
-.menu-title{
-    font-size: 34px;
-    margin-bottom: 20px;
-    color: black;
-}
-.menu-text{
-    font-size: 14px;
-    color: #aaa;
-    margin: 20px 0;
-    width: 70%;
-}
-hr{
-    width: 30%;
-    margin: 25px 0;
-    color: #aaa;
-}
-
-.menu > li {
-    list-style-type: none;
-    text-transform: uppercase;
-    margin: 0;
-    font-size: 12px;
-    cursor: pointer;
-    transition: 0.35s;
   }
-  
-  .menu > li:hover {
-    color: black;
+  .menu{
+    display: flexs;
   }
-  
-  .menu > li.selected {
-    color: black;
+  .text_menu{
+    font-size: 20px;
+    padding: 20px;
+  }
+  .contacts{
+    margin-left: 70%;
+  }
+  .menu_burger{
+    height: 50px;
+    width: 100%;
+    background-color: #262626;
+    display: flex;
+	  justify-content: flex-end;
+    margin-left: 0;
   }
