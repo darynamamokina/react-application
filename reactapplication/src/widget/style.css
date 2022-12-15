@@ -1,0 +1,165 @@
+.widget {
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    flex-direction: row;
+    border-radius: 30px;
+    background-color: whitesmoke;
+    box-shadow:  22px 22px 57px #10111a, -22px -22px 57px #2b2d38;
+    color: whitesmoke;
+    box-sizing: border-box;
+    overflow: hidden;
+  }
+
+  #location-tag {
+    background: rgba(0, 0, 0, .5);
+    position: absolute;
+    top: 25px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    color: white;
+    box-sizing: border-box;
+    width: 250px;
+    height: 75px;
+    border-radius: 40px;
+  }
+
+  #location-tag div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+  }
+
+  #location-tag > div > img {
+    width: 30px;
+    filter: invert(1);
+    margin: 5px;
+  }
+
+  #current-location {
+    color: #cecece;
+    margin: 2px;
+  }
+
+  #city-name {
+    font-weight: bolder;
+    margin: 2px;
+  }
+
+  .greeting-title {
+    font-size: 50px;
+    font-weight: bolder;
+    margin-bottom: 10px;
+  }
+
+  .line {
+    background-color: white;
+    border-radius: 3px;
+    width: 100px;
+    height: 6px;
+  }
+
+  .greeting-container {
+    border-radius: 30px;
+    background-image: url(./imgs/tom-barrett--bSucp2nUdQ-unsplash.jpg);
+    background-size: cover;
+    background-position: 0px -200px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 750px;
+    height: 750px;
+  }
+
+  .info-container {
+    padding: 30px;
+    box-sizing: border-box;
+    color: black;
+  }
+
+  .general-info-container {
+    border-radius: 15px;
+    padding: 50px 30px;
+    box-sizing: border-box;
+    box-shadow: 0px 0px 15px rgb(177, 177, 177);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 15px 0 25px 0;
+  }
+
+  .more-info-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 30px;
+    margin: 15px 0 25px 0;
+  }
+
+  #subcontainer {
+    border-radius: 15px;
+    padding: 50px 30px;
+    box-sizing: border-box;
+    box-shadow: 0px 0px 15px rgb(177, 177, 177);
+    display: flex;
+    flex-direction: column;
+  }
+
+  #temperature {
+    font-weight: bolder;
+    font-size: 40px;
+  }
+
+  .img-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    margin: 15px 0;
+  }
+
+  .img-container > div {
+    font-size: 25px;
+    text-transform: capitalize;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .img-container > div > img {
+    width: 80px;
+  }
+
+  #info > div {
+    color: #b4b4b4;
+    font-size: 17px;
+    margin: 15px 0;
+  }
+
+  #vertical-hr {
+    width: 4px;
+    border-radius: 2px;
+    height: 200px;
+    background-color: #b4b4b4;
+    margin: 0 30px;
+  }
+
+  .info-title {
+    font-size: 35px;
+    font-weight: bolder;
+  }
+
+  .info-subtitle {
+    font-size: 20px;
+    font-weight: bolder;
+    margin-bottom: 10px;
+  }
+
+  #info-text {
+    color: #b4b4b4;
+    font-size: 17px;
+    margin: 5px 0;
+  }

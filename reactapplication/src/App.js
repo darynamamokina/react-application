@@ -1,9 +1,21 @@
-import logo from './logo.svg';
+import React, { useState } from "react";
 import './App.css';
+import Widget from './widget';
 
 function App() {
-  return (
+  const [selectedCity, setSelectedCity] = useState();
+  const selectCity = (event) => {
+    const value = event.target.value;
+    setSelectedCity(value);
+  };
 
+  return (
+    <div className="App">
+      <div className="input-container">
+        <input placeholder="Enter city" onBlur={selectCity}/>
+      </div>
+      <Widget city={selectedCity} />
+    </div>
   );
 }
 
