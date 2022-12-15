@@ -32,3 +32,36 @@
   .card .card-meta {
     font-size: 14px;
   }
+  
+  .card > .card-image:hover {
+    opacity: 0.8;
+  }
+  
+  .card > article,
+  .card > .card-text {
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+
+  .card .card-tag {
+    cursor: pointer;
+  }
+  
+  .card .card-id {
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    font-size: 10px;
+  }
+  .card .card-header {
+    font-size: 36px;
+    color: #aaa;
+    text-transform: capitalize;
+  }
+  
+  .card .hide {
+    height: 0;
+    overflow: hidden;
+    padding: 0;
+  }
