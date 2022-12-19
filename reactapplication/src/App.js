@@ -1,24 +1,24 @@
+import React from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
-import Navigation from './components/navigation';
-import Content from './components/content';
-import NotFoundPage from './components/notFoundPage';
 import About from './components/about';
+import Contact from './components/contact';
+import Content from './components/content';
+import Sidebar from './components/navigation';
 
-function App () {
+
+function App() {
   return (
     <BrowserRouter>
-      <div className="App">
-        <Navigation />
+      <div className='app'>
+      <Sidebar/>
         <Routes>
-          <Route path='/' element={<Content />} >
-            <Route path='/card/:cardId' element={<Content />} />
-          </Route>
-          <Route path='/about' element={<About />} />
-
-          <Route path='*' element={<NotFoundPage />} />
+          <Route path='/' element={<Content/>} />
+          <Route path='/about' element={<About/>} />
+          <Route path='/contact' element={<Contact/>} />
         </Routes>
-
+        
+        
       </div>
     </BrowserRouter>
   );

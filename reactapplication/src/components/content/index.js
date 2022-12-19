@@ -1,69 +1,67 @@
-import React, { useEffect, useState } from "react";
-import './style.css';
-import Card from '../card';
-import mockData from '../mock/data.json';
-import { NavLink, useParams } from "react-router-dom";
+import React from 'react'
+import './style.css'
+import Data from './data/data.json';
+import { v4 as uuid } from 'uuid';
 
 
-function Content () {
-  const cards = mockData;
-  const [tag, setTag] = useState();
-  console.log('tag:', tag);
+import Card from './card/index.js'
+import { useState } from 'react'
+
+function Content() {
+  const cards = Data.map(el => {
+    el.id = uuid();
+    return el;
+  });
+
+  const [topic, setTopic] = useState()
+  const [selectedCard, setSelectedCard] = useState();
 
   const classNames = ['selected-tag'];
-  if (tag) {
-    classNames.push('show');
-  }
+   if (topic) {
+     classNames.push('show');
+   }
 
-  const [selectedCard, setSelectedCard] = useState();
-  console.log('selectedCard:', selectedCard);
+  let cardArray = Data
+  .filter(card => {
+    if (topic) {
+      return card.topic === topic;
+    }
 
-  const { cardId } = useParams();
-  useEffect(() => {
-    setSelectedCard(
-      cards.find(card => card.id == cardId)
-    );
-  }, [cardId]);
+    if (selectedCard) {
+      return card.id === selectedCard.id;
+    }
+
+    return true;
+  })
+  .map (
+    card => <Card 
+     image = {card.image}
+     title = {card.title} 
+     content = {card.content}
+     date = {card.date}
+     topic = {card.topic}
+     setTopic = {setTopic}
+     id={card.id}
+     isArticleVisible={selectedCard && card.id === selectedCard.id}
+     fullPage={card.fullPage}
+     setSelectedCard={() => setSelectedCard(card)}
+
+      />
+  )
+
+  
+   
   return (
-    <div className="content-cont">
-      <div className={classNames.join(' ')}>{tag}</div>
-      {cards
-        .filter(card => {
-          if (tag) {
-            return card.tag === tag;
-          }
-
-          if (selectedCard) {
-            return card.id === selectedCard.id;
-          }
-
-          return true;
-        })
-        .map(card => {
-
-          return (
-            <NavLink to={`/card/${card.id}`}>
-              <Card
-                id={card.id}
-                isArticleVisible={selectedCard && card.id === selectedCard.id}
-                image={card.image}
-                title={card.title}
-                description={card.description}
-                date={card.date}
-                tag={card.tag}
-                fullPage={card.fullPage}
-                setSelectedTag={setTag}
-                setSelectedCard={() => setSelectedCard(card)}
-              /></NavLink>);
-        })}
-      <NavLink to='/'>
-        <div
-          className="return-all-posts"
-          onClick={() => { setTag(); setSelectedCard(); }}
-        >All posts</div>
-      </NavLink>
+    <div className='content'>
+    {/* <div className={classNames.join(' ')}>{topic}</div> */}
+      {cardArray}
+      <button onClick={() => {setTopic(); setSelectedCard()}} className='more_btn'>All posts &#8594;</button>
     </div>
-  );
+  )
 }
 
-export default Content;
+
+
+
+
+export default Content
